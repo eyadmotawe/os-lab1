@@ -15,8 +15,13 @@ while [[ true ]]; do
         sleep "$interval_secs"
         continue
       else
-        :
+        for file in $dir; do
+          for line in $file; do
+            :
+            :
+          done
+        done
       fi
-  cp directory_info_new directory_info_last
+  cp "$directory_info_new" "$directory_info_last"
   sleep "$interval_secs"
 done
