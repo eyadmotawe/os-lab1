@@ -44,19 +44,19 @@ while [[ true ]]; do
               mv "$file" "$malicious_dir"
               continue
             fi
-          if [[ $file == *.exe ]]; then
+          if [[ "$file" == *.exe ]]; then
             mv "$file" "$malicious_dir"
           fi
-          if [[ $file == *.bat ]]; then
+          if [[ "$file" == *.bat ]]; then
             mv "$file" "$malicious_dir"
           fi
-          if [[ $file == *.vbs ]]; then
+          if [[ "$file" == *.vbs ]]; then
             mv "$file" "$malicious_dir"
           fi
-          if [[ $file == *.scr ]]; then
+          if [[ "$file" == *.scr ]]; then
             mv "$file" "$malicious_dir"
           fi
-          if [[ $file == *.ps1 ]]; then
+          if [[ "$file" == *.ps1 ]]; then
             mv "$file" "$malicious_dir"
           fi
         done
