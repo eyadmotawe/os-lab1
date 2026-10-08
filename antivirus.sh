@@ -4,6 +4,8 @@ if (( $# < 3)); then
   echo "missing parameter"
   exit 1
 fi
+directory_info_last="directory_info.last"
+directory_info_new="directory_info.new"
 
 ls -l "$dir" > "$directory_info_last"
 
