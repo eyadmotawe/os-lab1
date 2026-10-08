@@ -17,11 +17,12 @@ while [[ true ]]; do
         sleep "$interval_secs"
         continue
       else
-        for file in $dir; do
-          for line in $file; do
-            :
-            :
-          done
+        for file in "$dir"/*; do
+          grep -qi "virus" "$file"
+          if [ $? -eq 0 ]; then
+            mv "$file" "$malicious_dir"
+            continue
+            fi
         done
       fi
   cp "$directory_info_new" "$directory_info_last"
