@@ -22,7 +22,29 @@ while [[ true ]]; do
           if [ $? -eq 0 ]; then
             mv "$file" "$malicious_dir"
             continue
+          fi
+
+          grep -qi "trojan" "$file"
+            if [ $? -eq 0 ]; then
+              mv "$file" "$malicious_dir"
+              continue
             fi
+            grep -qi "malware" "$file"
+            if [ $? -eq 0 ]; then
+              mv "$file" "$malicious_dir"
+              continue
+            fi
+            grep -qi "worm" "$file"
+            if [ $? -eq 0 ]; then
+              mv "$file" "$malicious_dir"
+              continue
+            fi
+            grep -qi "ransomware" "$file"
+            if [ $? -eq 0 ]; then
+              mv "$file" "$malicious_dir"
+              continue
+            fi
+
         done
       fi
   cp "$directory_info_new" "$directory_info_last"
