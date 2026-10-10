@@ -18,3 +18,14 @@ if [[ $has_files -eq 0 ]]; then
   echo "No malicious files to review."
   exit 0
 fi
+
+while [[ true ]]; do
+    arr=()
+    for f in "$malicious_dir"/*; do
+      if [[ -f "$f" ]]; then
+        arr+=("f")
+      fi
+    done
+
+
+done
