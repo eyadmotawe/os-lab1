@@ -27,5 +27,11 @@ while [[ true ]]; do
       fi
     done
 
+  echo "Quarantined files:"
+  i=1
+  for f in "${arr[@]}"; do
+    echo "$i: ${f}"
+    i=$((i + 1))
+    done
 
 done
