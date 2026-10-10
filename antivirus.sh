@@ -1,9 +1,12 @@
-read dir malicious_dir interval_secs
-
 if (( $# < 3)); then
   echo "missing parameter"
   exit 1
 fi
+
+dir="$1"
+malicious_dir="$2"
+interval_secs="$3"
+
 directory_info_last="directory_info.last"
 directory_info_new="directory_info.new"
 
