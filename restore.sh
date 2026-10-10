@@ -23,7 +23,7 @@ while [[ true ]]; do
     arr=()
     for f in "$malicious_dir"/*; do
       if [[ -f "$f" ]]; then
-        arr+=("f")
+        arr+=("$f")
       fi
     done
 
@@ -34,14 +34,14 @@ while [[ true ]]; do
     i=$((i + 1))
     done
 
-  read "chose file to operate on: " ch
+  read -p "chose file to operate on: " ch
 
   if (( ch < 1 || ch > "${#arr[@]}" )); then
     echo "Invalid option!"
     exit 1
   fi
 
-  chosen_file="${files[$((ch - 1))]}"
+  chosen_file="${arr[$((ch - 1))]}"
   filename="$chosen_file"
 
   echo "Options for $filename:"
