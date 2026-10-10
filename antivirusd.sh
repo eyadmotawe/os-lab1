@@ -11,6 +11,9 @@ directory_info_last="directory_info.last"
 directory_info_new="directory_info.new"
 
 for file in "$dir"/*; do
+  if [[ -f "$file" ]]; then
+    continue
+    fi
   grep -qi "virus" "$file"
   if [[ $? -eq 0 ]]; then
     echo "$file is malicious and it is DELETED"
@@ -88,6 +91,9 @@ while [[ true ]]; do
         continue
       else
         for file in "$dir"/*; do
+          if [[ -f "$file" ]]; then
+              continue
+              fi
           grep -qi "virus" "$file"
           if [[ $? -eq 0 ]]; then
             echo "$file is malicious and it is DELETED"
