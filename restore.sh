@@ -40,4 +40,15 @@ while [[ true ]]; do
     echo "Invalid option!"
     exit 1
   fi
+
+  chosen_file="${files[$((ch - 1))]}"
+  filename="$chosen_file"
+
+  echo "Options for $filename:"
+  echo "1: Restore this file back into dir"
+  echo "2: Permanently delete this file from malicious_dir"
+  echo "3: Leave this file as-is and go back to the list"
+
+  read -p "Input: " option
+
 done
