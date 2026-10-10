@@ -20,44 +20,59 @@ while [[ true ]]; do
         for file in "$dir"/*; do
           grep -qi "virus" "$file"
           if [[ $? -eq 0 ]]; then
+            echo "$file is malicious and it is DELETED"
             mv "$file" "$malicious_dir"
             continue
           fi
 
           grep -qi "trojan" "$file"
             if [[ $? -eq 0 ]]; then
+              echo "$file is malicious and it is DELETED"
               mv "$file" "$malicious_dir"
               continue
             fi
             grep -qi "malware" "$file"
             if [[ $? -eq 0 ]]; then
+              echo "$file is malicious and it is DELETED"
               mv "$file" "$malicious_dir"
               continue
             fi
             grep -qi "worm" "$file"
             if [[ $? -eq 0 ]]; then
+              echo "$file is malicious and it is DELETED"
               mv "$file" "$malicious_dir"
               continue
             fi
             grep -qi "ransomware" "$file"
             if [[ $? -eq 0 ]]; then
+              echo "$file is malicious and it is DELETED"
               mv "$file" "$malicious_dir"
               continue
             fi
           if [[ "$file" == *.exe ]]; then
+            echo "$file is malicious and it is DELETED"
             mv "$file" "$malicious_dir"
+            continue
           fi
           if [[ "$file" == *.bat ]]; then
+            echo "$file is malicious and it is DELETED"
             mv "$file" "$malicious_dir"
+            continue
           fi
           if [[ "$file" == *.vbs ]]; then
+            echo "$file is malicious and it is DELETED"
             mv "$file" "$malicious_dir"
+            continue
           fi
           if [[ "$file" == *.scr ]]; then
+            echo "$file is malicious and it is DELETED"
             mv "$file" "$malicious_dir"
+            continue
           fi
           if [[ "$file" == *.ps1 ]]; then
+            echo "$file is malicious and it is DELETED"
             mv "$file" "$malicious_dir"
+            continue
           fi
         done
       fi
