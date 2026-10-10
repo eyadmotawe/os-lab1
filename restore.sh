@@ -51,4 +51,18 @@ while [[ true ]]; do
 
   read -p "Input: " option
 
+  if [[ "$option" == "1" ]]; then
+      mv "$chosen_file" "$dir/"
+      echo "Restored $filename to $dir."
+    fi
+
+    if [[ "$option" == "2" ]]; then
+      rm "$chosen_file"
+      echo "$filename permanently deleted."
+    fi
+
+    if [[ "$option" == "3" ]]; then
+      continue
+    fi
+
 done
