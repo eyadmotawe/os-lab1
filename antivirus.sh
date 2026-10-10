@@ -11,7 +11,7 @@ ls -l "$dir" > "$directory_info_last"
 
 while [[ true ]]; do
   ls -l "$dir" > "$directory_info_new"
-  diff "$directory_info_last" "$directory_info_new"
+  diff -q "$directory_info_last" "$directory_info_new"
     if [[ $? -eq 0 ]]; then
 
         sleep "$interval_secs"
