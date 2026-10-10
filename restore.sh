@@ -34,4 +34,10 @@ while [[ true ]]; do
     i=$((i + 1))
     done
 
+  read "chose file to operate on: " ch
+
+  if (( ch < 1 || ch > "${#arr[@]}" )); then
+    echo "Invalid option!"
+    exit 1
+  fi
 done
